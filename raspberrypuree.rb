@@ -1,7 +1,7 @@
-KNOWN_SITES = [ { name: 'github', link: 'https://github.com'  } ]
+KNOWN_SITES = [ { name: 'github', hypertext_reference: 'https://github.com'  } ]
 
 class Raspberrypuree
-	attr_reader :markdown, :username, :uri, :nickname
+	attr_reader :markdown, :username, :uniform_resource_identifier, :nickname
 
 	def initialize(options)
 		site_url = options[:site_url]
@@ -14,7 +14,7 @@ class Raspberrypuree
       @username = find_user(text)
       @nickname = nicknames_finder(@username)
     end
-		@uri = "#{site_url}/#{@username.downcase}" # Quack!
+		@uniform_resource_identifier = "#{site_url}/#{@username.downcase}" # Quack!
 	end
 
 	def nicknames_finder(username)
@@ -26,7 +26,7 @@ class Raspberrypuree
 	end
 
 	def markdown
-		"[#{@raspberrymark}#{@username}](#{@uri})"
+		"[#{@raspberrymark}#{@username}](#{@uniform_resource_identifier})"
 	end
 
 	private

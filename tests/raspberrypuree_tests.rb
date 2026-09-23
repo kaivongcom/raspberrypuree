@@ -18,9 +18,9 @@ class TestRaspberrypuree < Minitest::Test
 		assert_equal('[@kaivongcom](https://github.com/kaivongcom)', @puree2.markdown)
 	end
 
-	def test_uri
-    assert_equal('https://github.com/kaivongcom', @puree1.uri)
-		assert_equal('https://github.com/kaivongcom', @puree2.uri)
+	def test_uniform_resource_identifier
+    assert_equal('https://github.com/kaivongcom', @puree1.uniform_resource_identifier)
+		assert_equal('https://github.com/kaivongcom', @puree2.uniform_resource_identifier)
 	end
 
 	def test_username
